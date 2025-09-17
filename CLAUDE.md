@@ -8,7 +8,7 @@ FastAPI backend that exposes simulation engine functionality over HTTP.
 - **WebSockets**: Real-time simulation state updates
 
 ## Development Commands
-- `uv run fastapi dev src/api/server.py` - Run dev server
+- `uv run fastapi dev src/api/main.py` - Run dev server
 - `uv run ruff check` - Lint code
 - `uv run ruff format` - Format code
 - `uv sync` - Sync dependencies
