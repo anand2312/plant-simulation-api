@@ -1,8 +1,13 @@
-from typing import Any
+import simpy
 from loguru import logger
 from fastapi import FastAPI
-import simpy
 from sim import simulation, builder
+
+from .models import PlantConfiguration
+import logging
+
+
+logging.basicConfig(level=logging.DEBUG)
 
 app = FastAPI(
     title="Warehouse Plant Simulation API",
@@ -12,7 +17,7 @@ app = FastAPI(
 
 
 @app.get("/")
-async def root():
+async def root() -> dict[str, str]:
     """Root endpoint providing API information."""
     return {
         "message": "Warehouse Plant Simulation API",
@@ -21,11 +26,11 @@ async def root():
     }
 
 
-@app.get("/run")
-async def run_simulation(obj: dict[str, Any], until: int) -> dict[str, simulation.DrainResults]:
+@app.post("/run")
+async def run_simulation(obj: PlantConfiguration, until: int) -> dict[str, simulation.ComponentStats]:
     logger.info(f"Starting simulation run with obj = {obj}")
     env = simpy.Environment()
-    components = builder.PlantBuilder(env).build_from_dict(obj)
+    components = builder.PlantBuilder(env).build_from_dict(obj.model_dump())
     sim = simulation.Simulation(env, components)
     sim.run(until)
     logger.info(f"Results for {obj}: {sim.get_results()}")
