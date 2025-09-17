@@ -23,4 +23,4 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv.sources]
-sim = { git = "https://github.com/anand2312/plant-simulation-lib.git" }
+sim = { git = "https://github.com/anand2312/plant-simulation-lib", rev = "anand2312/continue" }

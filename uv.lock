@@ -42,7 +42,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.116.1" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "pydantic", specifier = ">=2.11.9" },
-    { name = "sim", git = "https://github.com/anand2312/plant-simulation-lib.git" },
+    { name = "sim", git = "https://github.com/anand2312/plant-simulation-lib?rev=anand2312%2Fcontinue" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.35.0" },
 ]
 
@@ -229,7 +229,7 @@ wheels = [
 [[package]]
 name = "sim"
 version = "0.1.0"
-source = { git = "https://github.com/anand2312/plant-simulation-lib.git#c25c11789a5b001630c93d685b9cc846f891fbcd" }
+source = { git = "https://github.com/anand2312/plant-simulation-lib?rev=anand2312%2Fcontinue#2d75ff7bc4250b9ab348c07d30803dd49d1f32c7" }
 dependencies = [
     { name = "simpy" },
 ]
