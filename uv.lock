@@ -525,7 +525,7 @@ wheels = [
 [[package]]
 name = "sim"
 version = "0.1.0"
-source = { git = "https://github.com/anand2312/plant-simulation-lib?rev=anand2312%2Fcontinue#6413ca9af10a068cae88b806afe0e69214355597" }
+source = { git = "https://github.com/anand2312/plant-simulation-lib?rev=anand2312%2Fcontinue#3b9957143e0cf93ecf71a6f318046bd679fc36a9" }
 dependencies = [
     { name = "simpy" },
 ]
